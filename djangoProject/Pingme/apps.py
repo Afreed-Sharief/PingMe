@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class SocialConfig(AppConfig):
-    name = 'social'
+class PingmeConfig(AppConfig):
+    name = 'Pingme'
     def ready(self):
-        import social.mysignal
+        import Pingme.mysignal

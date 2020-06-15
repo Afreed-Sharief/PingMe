@@ -23,11 +23,11 @@
             <td>{{n1.age}}</td>
             <td>{{n1.gender}}</td>
             <td>
-            <a class="btn btn-dark btn-sm" href='/social/myprofile/{{n1.id}}'>Read More</a>
+            <a class="btn btn-dark btn-sm" href='/Pingme/myprofile/{{n1.id}}'>Read More</a>
             {% if n1.followed %}
-            <a class="btn btn-danger btn-sm" href='/social/myprofile/unfollow/{{n1.id}}'>Unfollow</a>
+            <a class="btn btn-danger btn-sm" href='/Pingme/myprofile/unfollow/{{n1.id}}'>Unfollow</a>
             {% else %}
-            <a class="btn btn-primary btn-sm" href='/social/myprofile/follow/{{n1.id}}'>Follow</a>
+            <a class="btn btn-primary btn-sm" href='/Pingme/myprofile/follow/{{n1.id}}'>Follow</a>
             {% endif %}
             </td>
         </tr>

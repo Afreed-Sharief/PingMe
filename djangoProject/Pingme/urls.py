@@ -1,17 +1,17 @@
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from social import views
+from Pingme import views
 from django.views.generic.base import RedirectView
 urlpatterns = [ 
     path('home/', views.HomeView.as_view()),
     path('about/', views.AboutView.as_view()),
     path('contact/', views.ContactView.as_view()),
     
-    path('profile/edit/<int:pk>', views.MyProfileUpdateView.as_view(success_url="/social/home")),
+    path('profile/edit/<int:pk>', views.MyProfileUpdateView.as_view(success_url="/Pingme/home")),
     
-    path('mypost/create/', views.MyPostCreate.as_view(success_url="/social/mypost")),
-    path('mypost/delete/<int:pk>', views.MyPostDeleteView.as_view(success_url="/social/mypost")),
+    path('mypost/create/', views.MyPostCreate.as_view(success_url="/Pingme/mypost")),
+    path('mypost/delete/<int:pk>', views.MyPostDeleteView.as_view(success_url="/Pingme/mypost")),
     path('mypost/', views.MyPostListView.as_view()),
     path('mypost/<int:pk>', views.MyPostDetailView.as_view()),
 

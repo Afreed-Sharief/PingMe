@@ -3,7 +3,7 @@ from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
-from social.models import FollowUser, MyPost, MyProfile, PostComment, PostLike
+from Pingme.models import FollowUser, MyPost, MyProfile, PostComment, PostLike
 from django.views.generic.detail import DetailView
 from django.db.models import Q
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -12,7 +12,7 @@ from django.http.response import HttpResponseRedirect
 # Create your views here.
 @method_decorator(login_required, name="dispatch")    
 class HomeView(TemplateView):
-    template_name = "social/home.html"
+    template_name = "Pingme/home.html"
     def get_context_data(self, **kwargs):
         context = TemplateView.get_context_data(self, **kwargs)
         followedList = FollowUser.objects.filter(followed_by = self.request.user.myprofile)
@@ -33,30 +33,30 @@ class HomeView(TemplateView):
 
 
 class AboutView(TemplateView):
-    template_name = "social/about.html"
+    template_name = "Pingme/about.html"
 
 class ContactView(TemplateView):
-    template_name = "social/contact.html"
+    template_name = "Pingme/contact.html"
 
 def follow(req, pk):
     user = MyProfile.objects.get(pk=pk)
     FollowUser.objects.create(profile=user, followed_by = req.user.myprofile)
-    return HttpResponseRedirect(redirect_to="/social/myprofile")
+    return HttpResponseRedirect(redirect_to="/Pingme/myprofile")
 
 def unfollow(req, pk):
     user = MyProfile.objects.get(pk=pk)
     FollowUser.objects.filter(profile=user, followed_by = req.user.myprofile).delete()
-    return HttpResponseRedirect(redirect_to="/social/myprofile")
+    return HttpResponseRedirect(redirect_to="/Pingme/myprofile")
 
 def like(req, pk):
     post = MyPost.objects.get(pk=pk)
     PostLike.objects.create(post=post, liked_by = req.user.myprofile)
-    return HttpResponseRedirect(redirect_to="/social/home")
+    return HttpResponseRedirect(redirect_to="/Pingme/home")
 
 def unlike(req, pk):
     post = MyPost.objects.get(pk=pk)
     PostLike.objects.filter(post=post, liked_by = req.user.myprofile).delete()
-    return HttpResponseRedirect(redirect_to="/social/home")
+    return HttpResponseRedirect(redirect_to="/Pingme/home")
 
 
 @method_decorator(login_required, name="dispatch")    
@@ -111,33 +111,4 @@ class MyProfileListView(ListView):
 class MyProfileDetailView(DetailView):
     model = MyProfile
 
- 
-# 
-# @method_decorator(login_required, name="dispatch")    
-# class ProfileUpdateView(UpdateView):
-#     model = Profile
-#     fields = ["branch", "sem", "marks_10", "marks_12", "marks_aggr", "rn", "myimg", "myresume", "skills"]
-# 
-# 
-# @method_decorator(login_required, name="dispatch")    
-# class QuestionCreate(CreateView):
-#     model = Question
-#     fields = ["subject", "msg"]
-#     def form_valid(self, form):
-#         self.object = form.save()
-#         self.object.user = self.request.user
-#         self.object.save()
-#         return HttpResponseRedirect(self.get_success_url())
-#     
-# @method_decorator(login_required, name="dispatch")    
-# class MyList(TemplateView):
-#     template_name = "college/mylist.html"
-#     def get_context_data(self, **kwargs):
-#         context = TemplateView.get_context_data(self, **kwargs)
-#         context["notices"] = Notice.objects.order_by("-id")[:3]
-#         context["questions"] = Question.objects.order_by("-id")[:3]
-#         return context;
-# 
-# 
-#     
-#     
+

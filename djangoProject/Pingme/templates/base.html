@@ -3,7 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Sabha</title>
+<title>Pingme</title>
 <link href="/static/vender/bs/css/bootstrap.min.css" rel="stylesheet" />
 <script src="/static/vender/jquery-3.3.1.min.js"></script>
 <script src="/static/vender/popper.min.js"></script>
@@ -14,10 +14,10 @@
 <body>
 
 <header id="myheader1">
-	<img class="w-100 h-100" src="/static/images/banner.jpg" />
+	<img class="w-100 h-100" src="/static/images/banner1.jpg" />
 	<div id="headfix">
 <nav class="navbar navbar-expand-md navbar-light bg-transparent">
-    <a class="navbar-brand" href="#">E-Sabha</a>
+    <a class="navbar-brand" href="#">Pingme</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,20 +25,20 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="/social/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/Pingme/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/social/about">About</a>
+                <a class="nav-link" href="/Pingme/about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/social/contact">Contact</a>
+                <a class="nav-link" href="/Pingme/contact">Contact</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="/social/mypost">My Posts</a>
+                <a class="nav-link" href="/Pingme/mypost">My Posts</a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="/social/myprofile">Profiles</a>
+                <a class="nav-link" href="/Pingme/myprofile">Profiles</a>
             </li>            
             <li class="nav-item">
                 <a class="nav-link" href="/accounts/logout">Logout</a>
@@ -56,7 +56,7 @@
 			{% else %}
 				{% if user.is_authenticated %}
 				            <li class="nav-item">
-                			<a class="nav-link" href="/social/profile/edit/{{ user.myprofile.id }}">Edit Profile</a>
+                			<a class="nav-link" href="/Pingme/profile/edit/{{ user.myprofile.id }}">Edit Profile</a>
             				</li>
 				{% endif %}
 			{% endif %}
@@ -90,14 +90,14 @@
 <p>1-800-800-xxxx</p>
 </div>
 <div class="col-sm-6">
-<h2>Social Media</h2>
+<h2>Pingme Media</h2>
 <a href="#"><span class="fa fa-facebook-official fa-2x mx-2"></span></a>
 <a href="#"><span class="fa fa-twitter fa-2x  mx-2"></span></a>
-<a href="https://www.youtube.com/channel/UCMZwWDcN1q5qphqzRa44LKA"><span class="fa fa-youtube fa-2x  mx-2"></span></a>
+<a href="#"><span class="fa fa-youtube fa-2x  mx-2"></span></a>
 </div>
 </div>
 
-<p>Copyright @ E-Sabha</p>
+<p>Copyright @ Pingme 2020</p>
 </footer>
 </body>
 </html>

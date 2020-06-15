@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 body{
-	background-color: #feecde;
+	background-color: #def0fea1;
 	font-size: 1.2em;	
 /*	background-image: url("/static/images/bg3.jpg"); */
 }
@@ -62,7 +62,7 @@ body{
 	text-shadow: 2px 2px 2px white;
 	font-family: cursive;
 	font-weight: bolder;	
-	background-image: url("/static/images/bg.jpg");
+	background-image: url("/static/images/bg1.jpg");
 }
 .myhead2{
 	color: #400000;

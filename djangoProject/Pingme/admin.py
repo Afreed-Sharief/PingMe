@@ -1,5 +1,5 @@
 from django.contrib import admin
-from social.models import FollowUser, MyPost, MyProfile, PostComment,PostLike
+from Pingme.models import FollowUser, MyPost, MyProfile, PostComment,PostLike
 from django.contrib.admin.options import ModelAdmin
 
 class FollowUserAdmin(ModelAdmin):
