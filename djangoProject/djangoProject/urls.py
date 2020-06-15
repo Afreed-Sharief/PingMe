@@ -13,11 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
-from Pingme import views
+from django.urls.conf import include
+from django.views.generic.base import RedirectView
+from django.conf.urls.static import static
+from djangoProject import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-]
+    path('accounts/', include('registration.backends.default.urls')),
+
+    path('Pingme/', include('Pingme.urls')),
+    path('', RedirectView.as_view(url="Pingme/")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

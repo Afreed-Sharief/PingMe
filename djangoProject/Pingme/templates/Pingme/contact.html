@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="p-5">
+
+<div class="row">
+	<div class="col">
+	<h1 class="myhead2">Contact</h1>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+	<form>
+	<input class="form-control" type="text" name="uname" placeholder="Name" /><br>
+	<input class="form-control" type="email" name="email" placeholder="email" /><br>
+	<input class="form-control" type="tel" name="phone_no" placeholder="Phone No" /><br>
+	<textarea class="form-control"  placeholder="MSG"></textarea><br>
+	<button class="btn btn-dark btn-block" type="submit">Submit</button>
+	</form>
+	</div>
+	<div class="col-sm-6">
+	<p>
+	<strong><span class="fa fa-map-marker mx-2"></strong> Pingme 5th main, HSR layout banglore - 560068 <br><br>
+	<strong><span class="fa fa-phone mx-2"></strong> 9035xxxx<br><br>
+	<strong><span class="fa fa-fax mx-2"></strong> 999386xxxx<br><br>
+	<strong><span class="fa fa-globe mx-2"></strong> http://pingme.com<br><br>
+	</p>
+	</div>
+</div>
+</main>
+{% endblock %}
